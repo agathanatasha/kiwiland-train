@@ -11,11 +11,20 @@ class City
     attr_accessor :name, :available_routes
 
     def add_available_route city_name, distance
-        if city_name.is_a?(String) && distance.is_a?(Integer)
-            @available_routes[city_name] = distance
-        else
+        
+        unless city_name.is_a?(String) && distance.is_a?(Integer)
             raise ArgumentError, "Invalid input, city_name should be a string and distance is an integer"
         end
+
+        unless distance > 0
+            raise ArgumentError, "Distance cannot be zero."
+        end
+
+        unless city_name != @name
+            raise ArgumentError, "Cannot add a route to itself"
+        end
+
+        @available_routes[city_name] = distance
     end
 
     def distance_to city_name

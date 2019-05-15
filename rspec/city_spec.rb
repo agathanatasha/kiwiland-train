@@ -1,4 +1,4 @@
-require '../city'
+require_relative '../city'
 describe 'City' do 
     context 'Initialize city object' do
         it 'return City name after initialize' do
@@ -46,6 +46,24 @@ describe 'City' do
             city.add_available_route('Montreal', 10)
             city.add_available_route('Montreal', 15)
             expect(city.available_routes).to eq({'Montreal' => 15})
+        end
+
+        it 'cannot add a route to the itself' do
+            city = City.new('Toronto')
+            expect{city.add_available_route('Toronto', 2)}.to raise_error(ArgumentError)
+            expect(city.available_routes).to be_empty
+        end
+
+        it 'cannot add a route of zero distance' do
+            city = City.new('Toronto')
+            expect{city.add_available_route('Montreal', 0)}.to raise_error(ArgumentError)
+            expect(city.available_routes).to be_empty
+        end
+
+        it 'cannot add a route of negative distance' do
+            city = City.new('Toronto')
+            expect{city.add_available_route('Montreal', -2)}.to raise_error(ArgumentError)
+            expect(city.available_routes).to be_empty
         end
     end
 
