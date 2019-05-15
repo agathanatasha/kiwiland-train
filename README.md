@@ -7,8 +7,9 @@ Run `bundle install` to install rspec
 You could import the file to irb to interact with it.
 `irb -r <file_name>`
 
-
-All tests listed in the instructions are implemented in ./rspec/train_service_spec.rb under describe provided test inputs.
+## Tests
+Tests are implemented for each file and placed in rspec directory.
+All tests listed in the instructions are implemented in ./rspec/train_service_spec.rb under describe "provided test inputs".
 
 ## Instructions
 A local commuter railroad services a number of towns in
