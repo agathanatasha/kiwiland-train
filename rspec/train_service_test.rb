@@ -68,6 +68,15 @@ describe 'trains' do
     end
 
     context 'get shortest distance between two towns' do
+        it 'returns No such route when no paths are available' do
+            service = Train_Service.new ["AB1", "BC4", "CD2"]
+            expect(service.shortest_distance("D", "A")).to eq(NO_SUCH_ROUTE)
+        end
+
+        it 'returns the shortest distance when at least one path is available' do
+            service = Train_Service.new ["AB1", "BC4", "CD2", "AD10"]
+            expect(service.shortest_distance("A", "D")).to eq(7)
+        end
     end
 
     context 'filter path helper function' do

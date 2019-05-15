@@ -46,6 +46,7 @@ class Train_Service
 
     def shortest_distance start, destination
         paths = all_direct_paths(start, destination)
+        return NO_SUCH_ROUTE if paths.empty?
         distances = paths.map { |path| get_distance(path) }
         return distances.min
     end
