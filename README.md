@@ -1,3 +1,16 @@
+# Kiwiland Train Service
+
+## Install gem
+Run `bundle install` to install rspec
+
+## Interact with the code
+You could import the file to irb to interact with it.
+`irb -r <file_name>`
+
+
+All tests listed in the instructions are implemented in ./rspec/train_service_spec.rb under describe provided test inputs.
+
+## Instructions
 A local commuter railroad services a number of towns in
 Kiwiland.  Because of monetary concerns, all of the tracks are 'one-way.'
 That is, a route from Kaitaia to Invercargill does not imply the existence
