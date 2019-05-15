@@ -1,4 +1,4 @@
-require '../train_map'
+require_relative '../train_map'
 
 describe 'train map' do
     context 'initialize Train_Map Object' do
