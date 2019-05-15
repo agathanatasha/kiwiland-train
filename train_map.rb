@@ -34,8 +34,4 @@ class Train_Map
             @nodes[destination_city_name] = destination_city
         end
     end
-
-    def exist_city? city_name
-        return @nodes.has_key? city_name
-    end
 end

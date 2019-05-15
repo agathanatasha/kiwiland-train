@@ -123,16 +123,4 @@ describe 'train map' do
 
 
     end
-
-    context 'check if node is in the map' do
-        map = Train_Map.new
-        map.generate_map ["AE2"]
-        it 'returns true if node exist' do
-            expect(map.exist_city?('A')).to be(true)
-        end
-
-        it 'returns false if node does not exist' do
-            expect(map.exist_city?('B')).to be(false)
-        end
-    end
 end
